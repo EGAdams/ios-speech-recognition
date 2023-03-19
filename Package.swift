@@ -32,7 +32,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-algorithms.git", from: "0.0.4"),
         .package(url: "https://github.com/apple/swift-crypto.git", from: "2.0.0"),
         .package(url: "https://github.com/apple/swift-numerics.git", from: "0.1.0"),
-        .package(url: "https://github.com/apple/swift-xctest.git", from: "1.0.0"),
+        .package(url: "https://github.com/apple/swift-corelibs-xctest.git", from: "1.0.0"),
     ],
     targets: [
         .target(
@@ -52,7 +52,7 @@ let package = Package(
             name: "ios-speech-recognitionTests",
             dependencies: [
                 .target(name: "ios-speech-recognition"),
-                .product(name: "XCTest", package: "swift-xctest"),
+                .product(name: "XCTest", package: "swift-corelibs-xctest"),
             ]
         ),
     ]
