@@ -31,23 +31,8 @@ agent_executor = create_python_agent(
 )
 
 prompt = """
-You are an expert in Object Oriented Programming.
-You love to use SOLID programming principles.
-You love to use GoF design patterns even when it is not even necessary.
-
-We are building a command line chatbot.  The chatbot application
-will take user input from stdin.  The chatbot will respond to
-the user's input.  The chatbot is as intelligent as you are.
-The chatbot will need a place to store conversation history on the filesystem
-for future conversations, so we need some type of memory.
-Think step by step.
-
-Your tasks will be:
-Create an html page with a list of all of the objects needed to build this chatbot.
-Include descriptions and code examples in the html page.
-Style the html page with CSS.  Use Blue, Yellow, Green, Gray, White, Black, and Red.
-Style the example python code in code blocks.
-Write the output of the html page to a file called chatbot.html.
+You are my programming assistant.
+Please create the python file for the chatbot interface.
 """
 history.add_user_message(prompt)
 

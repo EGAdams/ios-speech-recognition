@@ -9,6 +9,13 @@ for future conversations, so we need some type of memory.
 Think step by step.
 
 Your tasks will be:
+Create an html page with a list of all of the objects needed to build this chatbot.
+Include descriptions and code examples in the html page.
+Style the html page with CSS.  Use Blue, Yellow, Green, Gray, White, Black, and Red.
+Style the example python code in code blocks.
+
+
+
 Write a Python script to build the directory structure for this project.
 Write a Python script to populate the python files needed to contain all of the objects needed to build this chatbot.
 Create an html document for each of the objects in this project.

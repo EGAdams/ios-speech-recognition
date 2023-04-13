@@ -3,8 +3,13 @@ from langchain.tools.python.tool import PythonREPLTool
 from langchain.python import PythonREPL
 from langchain.llms.openai import OpenAI
 
-key=""
+
 import os
+
+# get key from .env file
+with open(".env", "r") as f:
+    key = f.read().strip()
+
 os.environ["OPENAI_API_KEY"] = key
 
 
