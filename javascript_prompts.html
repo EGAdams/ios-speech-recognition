@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>JavaScript Prompts</title>
+    <style>
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+css
+Copy code
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+</style>
+</head>
+<body>
+    <div id="accordion-container"></div>
+php
+Copy code
+<template id="prompt-web-component">
+    <button class="accordion"></button>
+    <div class="panel">
+        <p></p>
+    </div>
+</template>
+
+<script>
+    class PromptWebComponent extends HTMLElement {
+        constructor() {
+            super();
+            this.attachShadow({ mode: 'open' });
+            this.shadowRoot.appendChild(document.getElementById('prompt-web-component').content.cloneNode(true));
+        }
+
+        connectedCallback() {
+            const title = this.getAttribute('title');
+            const content = this.getAttribute('content');
+
+            this.shadowRoot.querySelector('.accordion').textContent = title;
+            this.shadowRoot.querySelector('p').textContent = content;
+        }
+    }
+
+    customElements.define('prompt-web-component', PromptWebComponent);
+
+    const prompts = [
+        { title: 'Suggest strategies for implementing JavaScript code...', content: '...' },
+        { title: 'Suggest ways to optimize JavaScript code for...', content: '...' },
+        // Add more prompts here
+    ];
+
+    function addPrompt(prompt) {
+        const element = document.createElement('prompt-web-component');
+        element.setAttribute('title', prompt.title);
+        element.setAttribute('content', prompt.content);
+        document.getElementById('accordion-container').appendChild(element);
+    }
+
+    prompts.forEach(prompt => addPrompt(prompt));
+
+    const accordions = document.getElementsByClassName('accordion');
+
+    for (let i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener('click', function () {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+        });
+    }
+</script>
+</body>
+</html>
