@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Objects needed to build this chatbot:</h1>
+    <ul>
+        <li>Command pattern</li>
+        <li>SOLID principles</li>
+        <li>Memory</li>
+    </ul>
+
+    <h2>Command pattern:</h2>
+    <p>The command design pattern is one of the twenty-three well-known GoF design patterns that describe how to solve recurring design problems to design flexible and reusable object-oriented software, that is, objects that are easier to implement, change, test, and reuse. Using the command design pattern can solve these problems:</p>
+    <ul>
+        <li>Decoupling the object that invokes the operation from the one that knows how to perform it.</li>
+        <li>Allowing you to create a sequence of commands by providing a queue system.</li>
+        <li>Allowing you to implement undo and redo functionality with ease.</li>
+    </ul>
+
+    <h2>SOLID principles:</h2>
+    <p>SOLID principles are applied in most of GoF's design patterns. SOLID stands for:</p>
+    <ul>
+        <li>Single responsibility principle (SRP): A class should have only one reason to change.</li>
+        <li>Open/closed principle (OCP): A class should be open for extension but closed for modification.</li>
+        <li>Liskov substitution principle (LSP): Subtypes must be substitutable for their base types.</li>
+        <li>Interface segregation principle (ISP): Clients should not be forced to depend on interfaces they do not use.</li>
+        <li>Dependency inversion principle (DIP): High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+    </ul>
+
+    <h2>Memory:</h2>
+    <p>You will need a place to store conversation history on the filesystem for future conversations. You can use Python's built-in file handling functions such as `open()` and `close()`.</p>
+
+    <h2>Example Python code:</h2>
+
+    <pre><code class="python">
+import os
+
+class Command:
+    def execute(self):
+        pass
+
+class SaveCommand(Command):
+    def execute(self):
+        # Save conversation history
+        pass
+
+class LoadCommand(Command):
+    def execute(self):
+        # Load conversation history
+        pass
+
+class ChatBot:
+    def __init__(self):
+        self.commands = []
+        self.history = []
+
+    def add_command(self, command):
+        self.commands.append(command)
+
+    def execute_commands(self):
+        for command in self.commands:
+            command.execute()
+
+if __name__ == "__main__":
+    chatbot = ChatBot()
+    chatbot.add_command(SaveCommand())
+    chatbot.add_command(LoadCommand())
+    chatbot.execute_commands()
+</code></pre>
+
+</body>
+</html>
