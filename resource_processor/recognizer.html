@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recognizer Object Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #0099cc;
+        }
+
+        h2, h3 {
+            margin-top: 1.5em;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-left: 3px solid #0099cc;
+            color: #666;
+            padding: 0.5em;
+            display: block;
+            margin: 1em 0;
+        }
+        .python-keyword {
+            color: #0074d9;
+            font-weight: bold;
+        }
+        .python-function {
+            color: #2ecc40;
+        }
+        .python-comment {
+            color: #aaaaaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recognizer Object Documentation</h1>
+
+    <h2>Overview</h2>
+    <p>
+        The Recognizer object is responsible for listening to the microphone input and recognizing commands. It will implement the Subject interface from the Observer pattern, allowing it to notify the AI Assistant object when a command is detected.
+    </p>
+
+    <h2>Recognizer Class</h2>
+    <pre>
+        <code>
+            <span class="python-keyword">class</span> Recognizer(Subject):
+                <span class="python-keyword">def</span> <span class="python-function">__init__</span>(self):
+                    self.observers = []
+                    
+                <span class="python-keyword">def</span> <span class="python-function">attach</span>(self, observer):
+                    self.observers.append(observer)
+    
+                <span class="python-keyword">def</span> <span class="python-function">detach</span>(self, observer):
+                    self.observers.remove(observer)
+    
+                <span class="python-keyword">def</span> <span class="python-function">notify</span>(self, command):
+                    <span class="python-keyword">for</span> observer <span class="python-keyword">in</span> self.observers:
+                        observer.update(command)
+    
+                <span class="python-keyword">def</span> <span class="python-function">start_listening</span>(self):
+                    <span class="python-comment"># Implementation for starting to listen to the microphone input</span>
+                    
+                <span class="python-keyword">def</span> <span class="python-function">stop_listening</span>(self):
+                    <span class="python-comment"># Implementation for stopping to listen to the microphone input</span>
+                    
+                <span class="python-keyword">def</span> <span class="python-function">_process_audio</span>(self, audio):
+                    <span class="python-comment"># Implementation for processing audio and detecting commands</span>
+        </code>
+    </pre>
+    
+    <p>
+        This class implements the required methods for the Subject interface, as well as methods to start and stop listening to the microphone input. The private method <code>_process_audio</code> will be responsible for processing the audio input and detecting commands.
+    </p>
+
+    <h3>Methods</h3>
+    <h4>attach(observer: Observer)</h4>
+    <p>Attaches an observer to the Recognizer's list of observers.</p>
+
+    <h4>detach(observer: Observer)</h4>
+    <p>Detaches an observer from the Recognizer's list of observers.</p>
+
+    <h4>notify(command: str)</h4>
+    <p>Notifies all attached observers with the detected command.</p>
+
+    <h4>start_listening()</h4>
+    <p>Starts listening to the microphone input.</p>
+
+    <h4>stop_listening()</h4>
+    <p>Stops listening to the microphone input.</p>
+
+    <h4>_process_audio(audio)</h4>
+    <p>Processes the audio input, detects commands, and notifies observers when a command is detected.</p>
+
+</body>
+
+</html>

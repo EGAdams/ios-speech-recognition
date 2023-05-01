@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <h1 style="text-align: center; color: darkblue;">Chatbot</h1>
+
+    <p style="font-weight: bold;">Object Description:</p>
+    <p>The Chatbot object handles user input and generates responses by interacting with other components of the system. It utilizes the <span style="color: green;">Microphone</span>, <span style="color: green;">Memory</span>, <span style="color: green;">Responses</span>, and <span style="color: green;">Trigger</span> objects to provide a seamless user experience.</p>
+
+    <p style="font-weight: bold;">Main Functionalities:</p>
+    <ul>
+        <li><span style="text-decoration: underline;">Listen</span> to the user's input through the Microphone object</li>
+        <li><span style="text-decoration: underline;">Detect</span> the trigger word "Giz" using the Trigger object</li>
+        <li><span style="text-decoration: underline;">Generate</span> a response using the Responses object</li>
+        <li><span style="text-decoration: underline;">Store</span> the conversation history in the Memory object</li>
+    </ul>
+
+    <p style="font-weight: bold;">Methods:</p>
+    <ul>
+        <li><code>__init__(self, microphone, memory, responses, trigger)</code>: Initialize the Chatbot object with instances of Microphone, Memory, Responses, and Trigger objects.</li>
+        <li><code>listen(self)</code>: Listen to the user's input and return the transcribed text.</li>
+        <li><code>detect_trigger(self, text)</code>: Detect the trigger word in the given text and return a boolean value.</li>
+        <li><code>generate_response(self, text)</code>: Generate an appropriate response based on the given text.</li>
+        <li><code>store_conversation(self, input_text, response_text)</code>: Store the conversation history in the Memory object.</li>
+        <li><code>run(self)</code>: Run the chatbot loop, listening for user input, detecting the trigger, generating responses, and storing conversation history.</li>
+    </ul>
+
+</body>
+
+</html>

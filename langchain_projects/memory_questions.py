@@ -19,7 +19,7 @@ previous_messages = messages_from_dict(dicts)
 #add previous messages to history
 history.messages = previous_messages
 
-key="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"
+key="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"
 import os
 os.environ["OPENAI_API_KEY"] = key
 
