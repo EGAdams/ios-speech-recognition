@@ -1,6 +1,18 @@
 {
     "cSpell.words": [
         "avfoundation",
-        "HTTPURL"
+        "corelibs",
+        "Docstore",
+        "FAISS",
+        "HTTPURL",
+        "metadatas",
+        "OPENAI",
+        "popleft",
+        "pydantic",
+        "reprioritize",
+        "reprioritizing",
+        "SERPAPI",
+        "vectorstore",
+        "xctest"
     ]
 }
